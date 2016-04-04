@@ -1,0 +1,14 @@
+{
+  "name": "UAMS-install-Script",
+  "version": "0.0.1",
+  "description": "Creates a UAMS collections for mongoDB",
+  "author": "Andrew Lane",
+  "dependencies": {
+    "mongodb": "2.1.14"
+  },
+
+  "devDependencies": {
+    "mongodb": "2.1.14"
+  },
+  "license": "MIT"
+}
