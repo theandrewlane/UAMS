@@ -84,8 +84,10 @@ var billEmptyData = {
 
 //End Empty Data
 
+//TODO use mongoose node module for schema-based DB creation
 function createDB() {
     db.open(function (err, db) {
+        console.log('Opening connection to UAMS database...');
         var customerCollection = db.collection('CUSTOMER');
         var packageReservationCollection = db.collection('PACKAGE RESERVATION');
         var orderCollection = db.collection('ORDER');
@@ -97,6 +99,7 @@ function createDB() {
         var transactionCollection = db.collection('TRANSACTION');
         var billCollection = db.collection('BILL');
 
+        console.log('Adding data to UAMS database...');
         createCollection(customerCollection, customerEmptyData).then(function () {
             createCollection(packageReservationCollection, packageReservationEmptyData).then(function () {
                 createCollection(orderCollection, orderEmptyData).then(function () {
@@ -107,9 +110,8 @@ function createDB() {
                                     createCollection(businessCollection, businessEmptyData).then(function () {
                                         createCollection(transactionCollection, transactionEmptyData).then(function () {
                                             createCollection(billCollection, billEmptyData).then(function () {
-                                                db.showCollections();
                                                 db.close();
-                                                console.log('UAMS database created successfully');
+                                                console.log('UAMS database created successfully, connection closed');
                                             });
                                         });
                                     });
