@@ -2,5 +2,5 @@
 
 - Install MongoDB
 - Start MongoDB service in a command prompt ```$mongod```
-- Run ```npm install``
+- Run ```npm install```
 - Run ```node init.js```
