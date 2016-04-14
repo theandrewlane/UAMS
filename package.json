@@ -1,14 +1,19 @@
 {
-  "name": "UAMS-install-Script",
-  "version": "0.0.1",
-  "description": "Creates a UAMS collections for mongoDB",
+  "name": "UAMS-Database",
+  "version": "0.0.2",
+  "description": "Creates UAMS collections for mongoDB",
   "author": "Andrew Lane",
   "dependencies": {
-    "mongodb": "2.1.14"
+    "mongodb": "^2.1.14",
+    "mongoose": "^4.4.12",
+    "mongo-triggers": "^0.0.5",
+    "mssql": "^3.2.0"
   },
-
   "devDependencies": {
-    "mongodb": "2.1.14"
+    "mongodb": "^2.1.14",
+    "mongoose": "^4.4.12",
+    "mongo-triggers": "^0.0.5",
+    "mssql": "^3.2.0"
   },
   "license": "MIT"
 }
