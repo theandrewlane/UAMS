@@ -31,17 +31,22 @@ var customerSchema = new Schema({
     CustomerEmail: {type: String, required: true, trim: true}
 });
 
+
+//TODO fix serviceRegistration and cust/biz addresses
+//TODO think about making price a number instead
+//TODO SQL connection
+
 var packageReservationSchema = new Schema({
-    Reservation_id: Number,
+    reservation_id: Number,
     customer_id: Number,
     package_id: Number,
     reservationDate: Date
 });
 
 var orderSchema = new Schema({
-    order_id: Number,
+    productQuantity: Number,
     product_id: Number,
-    productQuantity: Number
+    order_id: Number
 });
 
 var serviceReservationSchema = new Schema({
@@ -52,73 +57,41 @@ var serviceReservationSchema = new Schema({
 });
 
 var packageSchema = new Schema({
-    package_id: Number,
-    packageDescription: {type: String, required: true, trim: true},
-    packagePrice: Number,
+    businessID: Number,
     packageRequiredDeposit: Number,
-    businessID: Number
+    packagePrice: {type: String, required: true, trim: true},
+    packageDescription: {type: String, required: true, trim: true},
+    package_id: Number
 });
 
 var productSchema = new Schema({
-    product_id: Number,
-    productDescription: {type: String, required: true, trim: true},
+    productInventory: Number,
+    productPrice: {type: String, required: true, trim: true},
     business_id: Number,
-    productPrice: Number,
-    productInventory: Number
+    productDescription: {type: String, required: true, trim: true},
+    product_id: Number
 });
 
 var serviceSchema = new Schema({
-    service_id: Number,
-    serviceDescription: {type: String, required: true, trim: true},
+    serviceRequiredDeposit: Number,
+    servicePrice: {type: String, required: true, trim: true},
     business_id: Number,
-    servicePrice: Number,
-    serviceRequiredDeposit: Number
+    serviceDescription: {type: String, required: true, trim: true},
+    service_id: Number
 });
 
 var transactionSchema = new Schema({
-    trans_id: Number,
-    transDate: {type: Date, default: Date.now}
+    transDate: {type: Date, default: Date.now},
+    trans_id: Number
 });
 
 var billSchema = new Schema({
-    bill_id: Number,
-    billType: {type: String, required: true, trim: true},
+    billAmount: Number,
     billStatus: {type: String, required: true, trim: true},
-    billAmount: Number
+    billType: {type: String, required: true, trim: true},
+    bill_id: Number
 });
 
-var PersonSchema = new Schema({
-    name: String,
-    age: {type: Number, min: 18, index: true},
-    birthday: Date
-});
-
-//Create Models from schema
-var biz = [
-    {
-        'businessWebsite': 'http://www.MAKINGWAY.info',
-        'businessEmail': 'support@makingway.com',
-        'businessPhone': '+1 (900) 483-2113',
-        'businessAddress': '136 Williams Place Winfred, North Carolina 14522',
-        'businessZip': 14522,
-        'businessCity': 'Winfred',
-        'businessState': 'North Carolina',
-        'businessDescription': 'Commodo laborum tempor pariatur nostrud enim pariatur ea proident minim pariatur.',
-        'businessName': 'MAKINGWAY',
-        'business_id': 0
-    },
-    {
-        'businessWebsite': 'http://www.COMFIRM.ca',
-        'businessEmail': 'support@comfirm.biz',
-        'businessPhone': '+1 (946) 571-2529',
-        'businessAddress': '953 Kansas Place Ernstville, American Samoa 22765',
-        'businessZip': 22765,
-        'businessCity': 'Ernstville',
-        'businessState': 'American Samoa',
-        'businessDescription': 'Occaecat reprehenderit ullamco ea do veniam culpa minim voluptate pariatur reprehenderit eu ex deserunt.',
-        'businessName': 'COMFIRM',
-        'business_id': 1
-    }];
 
 db.on('error', function(err) {
     console.log('connection error', err);
