@@ -1,10 +1,22 @@
 var mongoose = require('mongoose');
+var dbHost = 'mongodb://localhost:27017/test';
+mongoose.connect(dbHost);
+
 
 require('./schema.js')();
 
 var Test = mongoose.model('Transaction');
 var Person = mongoose.model('Person');
 
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function(){
+    console.log("Connected to DB");
+
+
+
+
+/*
 
 mongoose.connect('mongodb://localhost/persons', function(err) {
     if (err) {
@@ -34,7 +46,7 @@ mongoose.connect('mongodb://localhost/persons', function(err) {
                 cleanup();
             }, 2000);
         });
-    });
+    });*/
 });
 
 function cleanup() {

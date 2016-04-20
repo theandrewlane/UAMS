@@ -1,0 +1,362 @@
+[
+  {
+    "billAmount": "$9,332.55",
+    "billStatus": "PR",
+    "billType": "C",
+    "bill_id": 1000
+  },
+  {
+    "billAmount": "$4,003.00",
+    "billStatus": "PS",
+    "billType": "C",
+    "bill_id": 1001
+  },
+  {
+    "billAmount": "-$2,803.93",
+    "billStatus": "AP",
+    "billType": "B",
+    "bill_id": 1002
+  },
+  {
+    "billAmount": "-$8,115.25",
+    "billStatus": "PR",
+    "billType": "B",
+    "bill_id": 1003
+  },
+  {
+    "billAmount": "-$7,528.67",
+    "billStatus": "PR",
+    "billType": "B",
+    "bill_id": 1004
+  },
+  {
+    "billAmount": "-$1,362.37",
+    "billStatus": "PS",
+    "billType": "C",
+    "bill_id": 1005
+  },
+  {
+    "billAmount": "$6,073.29",
+    "billStatus": "PS",
+    "billType": "B",
+    "bill_id": 1006
+  },
+  {
+    "billAmount": "$5,760.41",
+    "billStatus": "PS",
+    "billType": "C",
+    "bill_id": 1007
+  },
+  {
+    "billAmount": "$5,134.20",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 1008
+  },
+  {
+    "billAmount": "-$4,111.37",
+    "billStatus": "PR",
+    "billType": "C",
+    "bill_id": 1009
+  },
+  {
+    "billAmount": "$9,744.64",
+    "billStatus": "PS",
+    "billType": "B",
+    "bill_id": 10010
+  },
+  {
+    "billAmount": "$2,602.29",
+    "billStatus": "AP",
+    "billType": "B",
+    "bill_id": 10011
+  },
+  {
+    "billAmount": "$726.97",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10012
+  },
+  {
+    "billAmount": "$1,038.38",
+    "billStatus": "PR",
+    "billType": "B",
+    "bill_id": 10013
+  },
+  {
+    "billAmount": "$2,162.34",
+    "billStatus": "AP",
+    "billType": "B",
+    "bill_id": 10014
+  },
+  {
+    "billAmount": "-$9,906.11",
+    "billStatus": "PR",
+    "billType": "B",
+    "bill_id": 10015
+  },
+  {
+    "billAmount": "-$1,274.05",
+    "billStatus": "PS",
+    "billType": "C",
+    "bill_id": 10016
+  },
+  {
+    "billAmount": "-$5,252.69",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10017
+  },
+  {
+    "billAmount": "-$1,351.78",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10018
+  },
+  {
+    "billAmount": "-$992.58",
+    "billStatus": "AP",
+    "billType": "B",
+    "bill_id": 10019
+  },
+  {
+    "billAmount": "-$9,027.89",
+    "billStatus": "AP",
+    "billType": "B",
+    "bill_id": 10020
+  },
+  {
+    "billAmount": "-$4,164.53",
+    "billStatus": "AP",
+    "billType": "B",
+    "bill_id": 10021
+  },
+  {
+    "billAmount": "$560.15",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10022
+  },
+  {
+    "billAmount": "$736.74",
+    "billStatus": "AP",
+    "billType": "B",
+    "bill_id": 10023
+  },
+  {
+    "billAmount": "$3,927.13",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10024
+  },
+  {
+    "billAmount": "-$7,319.25",
+    "billStatus": "PS",
+    "billType": "B",
+    "bill_id": 10025
+  },
+  {
+    "billAmount": "$4,692.70",
+    "billStatus": "PR",
+    "billType": "C",
+    "bill_id": 10026
+  },
+  {
+    "billAmount": "$6,822.00",
+    "billStatus": "AP",
+    "billType": "B",
+    "bill_id": 10027
+  },
+  {
+    "billAmount": "-$477.88",
+    "billStatus": "PR",
+    "billType": "C",
+    "bill_id": 10028
+  },
+  {
+    "billAmount": "$4,810.48",
+    "billStatus": "PS",
+    "billType": "C",
+    "bill_id": 10029
+  },
+  {
+    "billAmount": "$9,441.81",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10030
+  },
+  {
+    "billAmount": "-$174.84",
+    "billStatus": "PR",
+    "billType": "B",
+    "bill_id": 10031
+  },
+  {
+    "billAmount": "-$4,891.67",
+    "billStatus": "PR",
+    "billType": "C",
+    "bill_id": 10032
+  },
+  {
+    "billAmount": "$2,889.50",
+    "billStatus": "AP",
+    "billType": "B",
+    "bill_id": 10033
+  },
+  {
+    "billAmount": "-$5,770.77",
+    "billStatus": "PR",
+    "billType": "C",
+    "bill_id": 10034
+  },
+  {
+    "billAmount": "$2,324.96",
+    "billStatus": "PS",
+    "billType": "B",
+    "bill_id": 10035
+  },
+  {
+    "billAmount": "-$277.38",
+    "billStatus": "PS",
+    "billType": "C",
+    "bill_id": 10036
+  },
+  {
+    "billAmount": "$7,558.61",
+    "billStatus": "PS",
+    "billType": "B",
+    "bill_id": 10037
+  },
+  {
+    "billAmount": "-$2,997.49",
+    "billStatus": "PR",
+    "billType": "C",
+    "bill_id": 10038
+  },
+  {
+    "billAmount": "$778.96",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10039
+  },
+  {
+    "billAmount": "$2,628.18",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10040
+  },
+  {
+    "billAmount": "$4,866.08",
+    "billStatus": "PR",
+    "billType": "B",
+    "bill_id": 10041
+  },
+  {
+    "billAmount": "-$9,563.01",
+    "billStatus": "PR",
+    "billType": "B",
+    "bill_id": 10042
+  },
+  {
+    "billAmount": "-$9,989.77",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10043
+  },
+  {
+    "billAmount": "-$7,752.24",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10044
+  },
+  {
+    "billAmount": "$1,152.22",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10045
+  },
+  {
+    "billAmount": "$4,131.26",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10046
+  },
+  {
+    "billAmount": "-$276.07",
+    "billStatus": "PS",
+    "billType": "C",
+    "bill_id": 10047
+  },
+  {
+    "billAmount": "-$1,344.63",
+    "billStatus": "PR",
+    "billType": "C",
+    "bill_id": 10048
+  },
+  {
+    "billAmount": "-$6,614.74",
+    "billStatus": "PR",
+    "billType": "B",
+    "bill_id": 10049
+  },
+  {
+    "billAmount": "-$8,500.88",
+    "billStatus": "PS",
+    "billType": "C",
+    "bill_id": 10050
+  },
+  {
+    "billAmount": "$2,875.33",
+    "billStatus": "PR",
+    "billType": "C",
+    "bill_id": 10051
+  },
+  {
+    "billAmount": "-$2,820.82",
+    "billStatus": "PR",
+    "billType": "B",
+    "bill_id": 10052
+  },
+  {
+    "billAmount": "$3,062.23",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10053
+  },
+  {
+    "billAmount": "$3,366.90",
+    "billStatus": "PS",
+    "billType": "B",
+    "bill_id": 10054
+  },
+  {
+    "billAmount": "-$118.57",
+    "billStatus": "AP",
+    "billType": "C",
+    "bill_id": 10055
+  },
+  {
+    "billAmount": "-$8,759.03",
+    "billStatus": "PR",
+    "billType": "B",
+    "bill_id": 10056
+  },
+  {
+    "billAmount": "$5,733.91",
+    "billStatus": "PS",
+    "billType": "B",
+    "bill_id": 10057
+  },
+  {
+    "billAmount": "$9,467.13",
+    "billStatus": "AP",
+    "billType": "B",
+    "bill_id": 10058
+  },
+  {
+    "billAmount": "-$3,346.44",
+    "billStatus": "PR",
+    "billType": "C",
+    "bill_id": 10059
+  }
+]

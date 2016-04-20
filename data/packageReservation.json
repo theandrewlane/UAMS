@@ -1,0 +1,68 @@
+[
+  {
+    "reservation_id": 20000,
+    "customer_id": 10000,
+    "package_id": 1000,
+    "reservationDate": "2015-05-13"
+  },
+  {
+    "reservation_id": 20001,
+    "customer_id": 10003,
+    "package_id": 1002,
+    "reservationDate": "2015-01-19"
+  },
+  {
+    "reservation_id": 20002,
+    "customer_id": 10006,
+    "package_id": 1004,
+    "reservationDate": "2013-04-12"
+  },
+  {
+    "reservation_id": 20003,
+    "customer_id": 10009,
+    "package_id": 1006,
+    "reservationDate": "2013-02-25"
+  },
+  {
+    "reservation_id": 20004,
+    "customer_id": 100012,
+    "package_id": 1008,
+    "reservationDate": "2013-03-27"
+  },
+  {
+    "reservation_id": 20005,
+    "customer_id": 100015,
+    "package_id": 10010,
+    "reservationDate": "2015-09-19"
+  },
+  {
+    "reservation_id": 20006,
+    "customer_id": 100018,
+    "package_id": 10012,
+    "reservationDate": "2014-01-29"
+  },
+  {
+    "reservation_id": 20007,
+    "customer_id": 100021,
+    "package_id": 10014,
+    "reservationDate": "2016-01-30"
+  },
+  {
+    "reservation_id": 20008,
+    "customer_id": 100024,
+    "package_id": 10016,
+    "reservationDate": "2014-12-19"
+  },
+  {
+    "reservation_id": 20009,
+    "customer_id": 100027,
+    "package_id": 10018,
+    "reservationDate": "2014-06-20"
+  },
+  {
+    "reservation_id": 200010,
+    "customer_id": 100030,
+    "package_id": 10020,
+    "reservationDate": "2014-01-13"
+  }
+]

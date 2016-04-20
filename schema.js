@@ -1,12 +1,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
-//Export schema and functions
-module.exports = function () {
-
-//Design the schema
-    var businessSchema = new Schema({
+var bulkSchema  = function(mongoose, conn) {
+    var self = this;
+//Design the mongoose.Schema
+    self.businessmongoose.Schema = new mongoose.Schema({
         business_id: Number,
         businessDescription: {type: String, required: true, trim: true},
         businessFirstName: {type: String, required: true, trim: true},
@@ -20,7 +18,7 @@ module.exports = function () {
         businessWebsite: {type: String, required: true, trim: true}
     });
 
-    var customerSchema = new Schema({
+    self.customermongoose.Schema = new mongoose.Schema({
         Customer_id: Number,
         TRAMSPerson_id: Number,
         CustomerFirstName: {type: String, required: true, trim: true},
@@ -33,86 +31,68 @@ module.exports = function () {
         CustomerEmail: {type: String, required: true, trim: true}
     });
 
-    var packageReservationSchema = new Schema({
+    self.packageReservationmongoose.Schema = new mongoose.Schema({
         Reservation_id: Number,
         customer_id: Number,
         package_id: Number,
         reservationDate: Date
     });
 
-    var orderSchema = new Schema({
+    self.ordermongoose.Schema = new mongoose.Schema({
         order_id: Number,
-        product_id: Number
+        product_id: Number,
+        productQuantity: Number
     });
 
-    var serviceReservationSchema = new Schema({
+    self.serviceReservationmongoose.Schema = new mongoose.Schema({
         reservation_id: Number,
         customer_id: Number,
         service_id: Number,
         reservationDate: Date
     });
 
-    var packageSchema = new Schema({
+    self.packagemongoose.Schema = new mongoose.Schema({
         package_id: Number,
         packageDescription: {type: String, required: true, trim: true},
-        packagePrice: {type: Number, get: getPrice, set: setPrice},
-        packageRequiredDeposit: {type: Number, get: getPrice, set: setPrice}
+        packagePrice: Number,
+        packageRequiredDeposit: Number,
+        businessID: Number
     });
 
-    var productSchema = new Schema({
+    self.productmongoose.Schema = new mongoose.Schema({
         product_id: Number,
         productDescription: {type: String, required: true, trim: true},
         business_id: Number,
-        productPrice: {type: Number, get: getPrice, set: setPrice}
+        productPrice: Number,
+        productInventory: Number
     });
 
-    var serviceSchema = new Schema({
+    self.servicemongoose.Schema = new mongoose.Schema({
         service_id: Number,
         serviceDescription: {type: String, required: true, trim: true},
         business_id: Number,
-        servicePrice: {type: Number, get: getPrice, set: setPrice},
-        serviceRequiredDeposit: {type: Number, get: getPrice, set: setPrice}
+        servicePrice: Number,
+        serviceRequiredDeposit: Number
     });
 
-    var transactionSchema = new Schema({
+    self.transactionmongoose.Schema = new mongoose.Schema({
         trans_id: Number,
         transDate: {type: Date, default: Date.now}
     });
 
-    var billSchema = new Schema({
+    self.billmongoose.Schema = new mongoose.Schema({
         bill_id: Number,
         billType: {type: String, required: true, trim: true},
         billStatus: {type: String, required: true, trim: true},
-        billAmount: {type: Number, get: getPrice, set: setPrice}
+        billAmount: Number
     });
 
-    var PersonSchema = new Schema({
+    self.Personmongoose.Schema = new mongoose.Schema({
         name: String,
-        age: { type: Number, min: 18, index: true },
+        age: {type: Number, min: 18, index: true},
         birthday: Date
     });
-    mongoose.model('Person', PersonSchema);
-
-    //Create Models from schema
-    mongoose.model('Business', businessSchema);
-    mongoose.model('Customer', customerSchema);
-    mongoose.model('PackageReservation', packageReservationSchema);
-    mongoose.model('ServiceReservation', serviceReservationSchema);
-    mongoose.model('Order', orderSchema);
-    mongoose.model('Package', packageSchema);
-    mongoose.model('Product', productSchema);
-    mongoose.model('Service', serviceSchema);
-    mongoose.model('Transaction', transactionSchema);
-    mongoose.model('Bill', billSchema);
-
-
-    //TODO triggers here - example res date must be >= today
-
-    function getPrice(num) {
-        return (num / 100).toFixed(2);
-    }
-
-    function setPrice(num) {
-        return num * 100;
-    }
 };
+
+modules.export = new bulkSchema;
+//Okay here's the data, brace yourself...

@@ -1,0 +1,177 @@
+[
+  {
+    "serviceRequiredDeposit": "$1,719.98",
+    "servicePrice": "$321.65",
+    "business_id": 10000,
+    "serviceDescription": "Id enim exercitation est sit consectetur nulla sunt quis dolor anim excepteur.",
+    "service_id": 1000
+  },
+  {
+    "serviceRequiredDeposit": "$1,410.78",
+    "servicePrice": "$338.61",
+    "business_id": 10001,
+    "serviceDescription": "Pariatur amet pariatur consequat duis aliquip anim amet Lorem aute.",
+    "service_id": 1001
+  },
+  {
+    "serviceRequiredDeposit": "$1,302.60",
+    "servicePrice": "$341.88",
+    "business_id": 10002,
+    "serviceDescription": "Aliqua enim eiusmod qui dolore laboris consequat eu do incididunt.",
+    "service_id": 1002
+  },
+  {
+    "serviceRequiredDeposit": "$1,364.08",
+    "servicePrice": "$537.23",
+    "business_id": 10003,
+    "serviceDescription": "Ex non aute incididunt do esse sit consequat.",
+    "service_id": 1003
+  },
+  {
+    "serviceRequiredDeposit": "$611.75",
+    "servicePrice": "$68.38",
+    "business_id": 10004,
+    "serviceDescription": "Nisi aute voluptate occaecat Lorem dolore ea sit sint.",
+    "service_id": 1004
+  },
+  {
+    "serviceRequiredDeposit": "$1,335.45",
+    "servicePrice": "$133.80",
+    "business_id": 10005,
+    "serviceDescription": "Consequat cillum deserunt adipisicing et do sunt irure.",
+    "service_id": 1005
+  },
+  {
+    "serviceRequiredDeposit": "$1,334.07",
+    "servicePrice": "$238.53",
+    "business_id": 10006,
+    "serviceDescription": "Veniam aliqua adipisicing ullamco irure ad minim id adipisicing proident est.",
+    "service_id": 1006
+  },
+  {
+    "serviceRequiredDeposit": "$1,003.68",
+    "servicePrice": "$697.55",
+    "business_id": 10007,
+    "serviceDescription": "Sint aliquip in commodo laboris amet laborum nisi.",
+    "service_id": 1007
+  },
+  {
+    "serviceRequiredDeposit": "$1,312.66",
+    "servicePrice": "$582.79",
+    "business_id": 10008,
+    "serviceDescription": "Laboris commodo elit magna anim nisi nulla cillum labore qui reprehenderit aute.",
+    "service_id": 1008
+  },
+  {
+    "serviceRequiredDeposit": "$886.98",
+    "servicePrice": "$44.13",
+    "business_id": 10009,
+    "serviceDescription": "Duis cillum cillum excepteur ad mollit ullamco incididunt ea deserunt cillum nulla enim labore pariatur.",
+    "service_id": 1009
+  },
+  {
+    "serviceRequiredDeposit": "$1,335.85",
+    "servicePrice": "$967.73",
+    "business_id": 100010,
+    "serviceDescription": "Aliquip mollit laboris cillum dolor dolor ullamco deserunt.",
+    "service_id": 10010
+  },
+  {
+    "serviceRequiredDeposit": "$1,131.37",
+    "servicePrice": "$25.35",
+    "business_id": 100011,
+    "serviceDescription": "Ad qui quis aute id officia.",
+    "service_id": 10011
+  },
+  {
+    "serviceRequiredDeposit": "$1,566.66",
+    "servicePrice": "$832.15",
+    "business_id": 100012,
+    "serviceDescription": "Culpa dolore exercitation Lorem enim est Lorem consectetur.",
+    "service_id": 10012
+  },
+  {
+    "serviceRequiredDeposit": "$600.76",
+    "servicePrice": "$888.26",
+    "business_id": 100013,
+    "serviceDescription": "Ea incididunt tempor excepteur labore labore non culpa incididunt labore incididunt.",
+    "service_id": 10013
+  },
+  {
+    "serviceRequiredDeposit": "$1,695.25",
+    "servicePrice": "$868.78",
+    "business_id": 100014,
+    "serviceDescription": "Ipsum Lorem do fugiat ipsum consequat.",
+    "service_id": 10014
+  },
+  {
+    "serviceRequiredDeposit": "$1,558.30",
+    "servicePrice": "$72.83",
+    "business_id": 100015,
+    "serviceDescription": "Sit culpa ut non excepteur officia dolore consequat consequat voluptate velit.",
+    "service_id": 10015
+  },
+  {
+    "serviceRequiredDeposit": "$1,029.28",
+    "servicePrice": "$159.44",
+    "business_id": 100016,
+    "serviceDescription": "Voluptate irure sit deserunt veniam.",
+    "service_id": 10016
+  },
+  {
+    "serviceRequiredDeposit": "$1,352.70",
+    "servicePrice": "$969.36",
+    "business_id": 100017,
+    "serviceDescription": "Voluptate ut Lorem reprehenderit et do ea velit aute.",
+    "service_id": 10017
+  },
+  {
+    "serviceRequiredDeposit": "$1,498.54",
+    "servicePrice": "$377.87",
+    "business_id": 100018,
+    "serviceDescription": "Laborum cillum excepteur tempor ex.",
+    "service_id": 10018
+  },
+  {
+    "serviceRequiredDeposit": "$1,180.66",
+    "servicePrice": "$681.49",
+    "business_id": 100019,
+    "serviceDescription": "Aute mollit voluptate commodo laboris.",
+    "service_id": 10019
+  },
+  {
+    "serviceRequiredDeposit": "$1,110.38",
+    "servicePrice": "$159.77",
+    "business_id": 100020,
+    "serviceDescription": "Laborum enim deserunt laboris fugiat nisi qui in magna incididunt.",
+    "service_id": 10020
+  },
+  {
+    "serviceRequiredDeposit": "$1,904.66",
+    "servicePrice": "$308.51",
+    "business_id": 100021,
+    "serviceDescription": "Ut ipsum officia in eu non cupidatat.",
+    "service_id": 10021
+  },
+  {
+    "serviceRequiredDeposit": "$505.84",
+    "servicePrice": "$889.19",
+    "business_id": 100022,
+    "serviceDescription": "Reprehenderit cupidatat reprehenderit aliqua est enim laborum.",
+    "service_id": 10022
+  },
+  {
+    "serviceRequiredDeposit": "$1,785.36",
+    "servicePrice": "$833.56",
+    "business_id": 100023,
+    "serviceDescription": "Eu sint nisi non irure dolor veniam dolor culpa pariatur fugiat ex.",
+    "service_id": 10023
+  },
+  {
+    "serviceRequiredDeposit": "$593.92",
+    "servicePrice": "$430.50",
+    "business_id": 100024,
+    "serviceDescription": "Ea elit sit reprehenderit eu dolor minim.",
+    "service_id": 10024
+  }
+]

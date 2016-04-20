@@ -1,0 +1,177 @@
+[
+  {
+    "productInventory": 133,
+    "productPrice": "$781.62",
+    "business_id": 10000,
+    "productDescription": "Eu qui labore veniam elit ea minim cillum et exercitation id.",
+    "product_id": 1000
+  },
+  {
+    "productInventory": 45,
+    "productPrice": "$984.52",
+    "business_id": 10001,
+    "productDescription": "Eiusmod excepteur cillum ullamco tempor.",
+    "product_id": 1001
+  },
+  {
+    "productInventory": 51,
+    "productPrice": "$773.98",
+    "business_id": 10002,
+    "productDescription": "Tempor do fugiat do esse adipisicing officia exercitation et.",
+    "product_id": 1002
+  },
+  {
+    "productInventory": 143,
+    "productPrice": "$398.60",
+    "business_id": 10003,
+    "productDescription": "Labore minim irure aute ea elit ex in.",
+    "product_id": 1003
+  },
+  {
+    "productInventory": 121,
+    "productPrice": "$555.69",
+    "business_id": 10004,
+    "productDescription": "Aliqua excepteur nulla voluptate enim nostrud.",
+    "product_id": 1004
+  },
+  {
+    "productInventory": 142,
+    "productPrice": "$12.02",
+    "business_id": 10005,
+    "productDescription": "In consectetur reprehenderit commodo nostrud consequat labore id irure.",
+    "product_id": 1005
+  },
+  {
+    "productInventory": 96,
+    "productPrice": "$476.82",
+    "business_id": 10006,
+    "productDescription": "Consequat incididunt exercitation ipsum mollit consequat deserunt.",
+    "product_id": 1006
+  },
+  {
+    "productInventory": 159,
+    "productPrice": "$973.73",
+    "business_id": 10007,
+    "productDescription": "Fugiat sunt voluptate nisi ipsum nulla culpa adipisicing reprehenderit.",
+    "product_id": 1007
+  },
+  {
+    "productInventory": 11,
+    "productPrice": "$962.18",
+    "business_id": 10008,
+    "productDescription": "Deserunt eiusmod officia mollit laborum nulla.",
+    "product_id": 1008
+  },
+  {
+    "productInventory": 103,
+    "productPrice": "$79.31",
+    "business_id": 10009,
+    "productDescription": "Nulla occaecat qui anim incididunt aute aute cillum nisi veniam tempor.",
+    "product_id": 1009
+  },
+  {
+    "productInventory": 73,
+    "productPrice": "$559.81",
+    "business_id": 100010,
+    "productDescription": "Aliquip culpa minim sint duis cillum nisi.",
+    "product_id": 10010
+  },
+  {
+    "productInventory": 97,
+    "productPrice": "$701.20",
+    "business_id": 100011,
+    "productDescription": "Fugiat Lorem nostrud ipsum mollit esse eu et ullamco cupidatat ut amet.",
+    "product_id": 10011
+  },
+  {
+    "productInventory": 49,
+    "productPrice": "$40.52",
+    "business_id": 100012,
+    "productDescription": "Nisi veniam do consequat incididunt officia laborum.",
+    "product_id": 10012
+  },
+  {
+    "productInventory": 14,
+    "productPrice": "$457.24",
+    "business_id": 100013,
+    "productDescription": "Nisi proident duis pariatur dolor ut.",
+    "product_id": 10013
+  },
+  {
+    "productInventory": 89,
+    "productPrice": "$410.85",
+    "business_id": 100014,
+    "productDescription": "Irure ex est irure esse laboris velit anim amet magna do velit amet.",
+    "product_id": 10014
+  },
+  {
+    "productInventory": 37,
+    "productPrice": "$419.09",
+    "business_id": 100015,
+    "productDescription": "Reprehenderit sunt et tempor laborum sit aliquip officia est et.",
+    "product_id": 10015
+  },
+  {
+    "productInventory": 53,
+    "productPrice": "$19.59",
+    "business_id": 100016,
+    "productDescription": "Irure dolore duis nostrud ex exercitation.",
+    "product_id": 10016
+  },
+  {
+    "productInventory": 23,
+    "productPrice": "$864.94",
+    "business_id": 100017,
+    "productDescription": "Anim reprehenderit irure mollit cupidatat officia labore esse eiusmod quis ad.",
+    "product_id": 10017
+  },
+  {
+    "productInventory": 118,
+    "productPrice": "$121.08",
+    "business_id": 100018,
+    "productDescription": "Velit anim est exercitation voluptate eu irure irure sit amet consectetur Lorem labore ea.",
+    "product_id": 10018
+  },
+  {
+    "productInventory": 18,
+    "productPrice": "$579.61",
+    "business_id": 100019,
+    "productDescription": "Aute sit excepteur ullamco ipsum ea ipsum eiusmod reprehenderit laboris occaecat elit laborum sit adipisicing.",
+    "product_id": 10019
+  },
+  {
+    "productInventory": 155,
+    "productPrice": "$651.81",
+    "business_id": 100020,
+    "productDescription": "Sunt commodo excepteur cupidatat duis quis.",
+    "product_id": 10020
+  },
+  {
+    "productInventory": 131,
+    "productPrice": "$768.19",
+    "business_id": 100021,
+    "productDescription": "Officia minim aliquip do commodo incididunt sit cupidatat et deserunt eu cupidatat amet.",
+    "product_id": 10021
+  },
+  {
+    "productInventory": 74,
+    "productPrice": "$182.80",
+    "business_id": 100022,
+    "productDescription": "Proident tempor eu id pariatur consectetur occaecat commodo.",
+    "product_id": 10022
+  },
+  {
+    "productInventory": 37,
+    "productPrice": "$264.94",
+    "business_id": 100023,
+    "productDescription": "Ut irure exercitation ullamco enim ex duis.",
+    "product_id": 10023
+  },
+  {
+    "productInventory": 75,
+    "productPrice": "$341.07",
+    "business_id": 100024,
+    "productDescription": "Aliquip ipsum duis ipsum do.",
+    "product_id": 10024
+  }
+]

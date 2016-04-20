@@ -1,0 +1,109 @@
+
+//Business
+{
+  business_id: '{{index()}}',
+            businessName: '{{company().toUpperCase()}}',
+            businessDescription: '{{lorem(1, "sentences")}}',
+            businessState: '{{state()}}',
+            businessCity: '{{city()}}',
+            businessZip: '{{integer(11111, 99999)}}',
+            street: '{{street()}}',
+            businessAddress:  function(tags) {
+                return (this.street + ' ' +this.businessCity + ' ' + this.businessState + ' ' + this.businessZip);
+            },
+            businessPhone: '+1 {{phone()}}',
+            businessEmail: function (tags) {
+                return ('support@' + this.businessName + tags.domainZone()).toLowerCase();
+            },
+            businessWebsite: function (tags) {
+                return ('http://www.' + this.businessName + tags.domainZone());
+            }
+         }
+
+        /// Customer
+
+    {
+        'repeat:25': {
+            customer_id: '1000{{index()}}',
+            TRAMSPerson_id: '{{integer(100000, 999999)}}',
+            customerFirstName: '{{firstName()}}',
+            customerLastName: '{{surname()}}',
+            customerState: '{{state()}}',
+            customerCity: '{{city()}}',
+            customerZip: '{{integer(11111, 99999)}}',
+            street: '{{street()}}',
+            customerAddress: function(tags) {
+    return (this.street + ' ' +this.customerCity + ', ' + this.customerState + ' ' + this.customerZip);
+},
+
+    customerPhone: '+1 {{phone()}}',
+    customerEmail: function (tags) {
+    return (this.customerLastName + '.' + this.customerFirstName + '@' + tags.domainZone()).toLowerCase();
+}
+}
+
+///PackageReservation
+
+reservation_id: '2000{{index()}}',
+customer_id: '1000{{index() * 3}}',
+package_id: '100{{index() * 2}}',
+reservationDate: '{{date(new Date(2015, 0, 1), new Date(), "YYYY-MM-dd")}}'
+
+
+//Order
+
+{
+'repeat:25': {
+order_id: '2000{{index()}}',
+product_id: '{{index() * 3}}',
+productQuantity: '{{integer(1, 4)}}'
+}
+}
+
+//Service Reservation
+
+reservation_id: '2000{{index()}}',
+customer_id: '1000{{index() * 3}}',
+service_id: '100{{index() * 2}}',
+reservationDate: '{{date(new Date(2015, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss")}}'
+
+//Package
+
+package_id: '100{{index()}}',
+packageDescription: '{{lorem(1, "sentences")}}',
+packagePrice: '{{floating(500, 4000, 2, "$0,0.00")}}',
+packageRequiredDeposit: '{{floating(500, 2000, 20, "$0,0.00")}}',
+business_id: '1000{{index()}}'
+
+//Product
+
+product_id: '100{{index()}}',
+productDescription: '{{lorem(1, "sentences")}}',
+business_id: '1000{{index()}}',
+productPrice: '{{floating(5, 1000, 2, "$0,0.00")}}',
+productInventory: '{{integer(0, 170)}}'
+
+//Service
+
+service_id: '100{{index()}}',
+serviceDescription: '{{lorem(1, "sentences")}}',
+business_id: '1000{{index()}}',
+servicePrice: '{{floating(5, 1000, 2, "$0,0.00")}}',
+serviceRequiredDeposit: '{{floating(500, 2000, 20, "$0,0.00")}}'
+
+//transaction
+trans_id: '100{{index()}}',
+transDate: '{{date(new Date(2015, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss")}}'
+
+//bill
+
+bill_id: '100{{index()}}',
+billType: function (tags) {
+var bills = ['C', 'B'];
+return bills[tags.integer(0, bills.length - 1)];
+},
+billStatus: function (tags) {
+var billstat = ['PR', 'PS', 'AP'];
+return billstat[tags.integer(0, billstat.length - 1)];
+},
+billAmount: '{{floating(-9999, 9999, 2, "$0,0.00")}}'
