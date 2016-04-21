@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/UAMS2');
 const db = mongoose.connection;
 
 const Schema = mongoose.Schema;
-import allDbData from './data/db-data.js';
+const allDbData = require('./data/db-data.js');
 
 //Construct Schemas
 const businessSchema = new Schema({
@@ -101,6 +101,8 @@ const serviceModel = mongoose.model('Service', serviceSchema);
 const transactionModel = mongoose.model('Transaction', transactionSchema);
 const billModel = mongoose.model('Bill', billSchema);
 
+const models = [businessModel, customerModel, packageReservationModel, serviceReservationModel, orderModel, packageModel, productModel, serviceModel, transactionModel, billModel];
+
 //Define Functions
 
 /*
@@ -128,8 +130,8 @@ const updateInventory = (prod_id, inventory/*, callback*/) => {
 };
 
 
-//const collections = ['businesses', 'customers', 'packagesReservations', 'serviceReservations', 'orders', 'packages', 'products', 'services', 'transactions', 'bills'];
-// const models = [business, customer, packagesReservation, serviceReservation, order, package, product, service, transaction, bill];
+const collections = ['businesses', 'customers', 'packagesReservations', 'serviceReservations', 'orders', 'packages', 'products', 'services', 'transactions', 'bills'];
+var data = ['businessData', 'customerData', 'packagesReservationData', 'serviceReservationData', 'orderData', 'packageData', 'productData', 'serviceData', 'transactionData', 'billData'];
 
 
 db.on('error', err => {
@@ -137,16 +139,24 @@ db.on('error', err => {
 });
 db.once('open', () => {
     console.log('connected, now do stuff!');
-
     //mongoose.connection.db.dropDatabase();
-
+    var i = 0;
+    /*   for (var x in allDbData) {
+           models[i].insertMany(allDbData[data[i]], err => {
+               if (err) {
+                   console.log(`error !!!! ${err}`);
+               }
+               console.info('Inserted all %s entries...', data[i]);
+               i++;
+           });
+       }*/
 
     businessModel.insertMany(allDbData.businessData, err => {
-        if (err) {
-            return console.log(`error !!!! ${err}`);
-        }
-        return console.info('Inserted all business entries...');
-    });
+            if (err) {
+                return console.log(`error !!!! ${err}`);
+            }
+            return console.info('Inserted all business entries...');
+        });
     customerModel.insertMany(allDbData.customerData, err => {
         if (err) {
             return console.log(err);
@@ -212,7 +222,7 @@ db.once('open', () => {
     updateInventory(10011, 39);
     setTimeout(() => {
         console.log('Closing DB...');
-        // return db.close(); //Don't close it if you're running functions from the terminal!
+        return db.close(); //Don't close it if you're running functions from the terminal!
     }, 1450);
 
 });
