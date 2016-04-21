@@ -1,7 +1,6 @@
 *.iml
+/mongoDB.iml
 *.xml
-.idea/
-bower_components/
-node_modules/
-node/
-.DS_Store
+/.idea
+/node_modules
+/.gitignore

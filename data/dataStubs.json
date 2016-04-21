@@ -8,8 +8,9 @@
             businessCity: '{{city()}}',
             businessZip: '{{integer(11111, 99999)}}',
             street: '{{street()}}',
+            address: '{{integer(100, 999)}}',
             businessAddress:  function(tags) {
-                return (this.street + ' ' +this.businessCity + ' ' + this.businessState + ' ' + this.businessZip);
+                return (this.address + ' ' + this.street + ' ' +this.businessCity + ' ' + this.businessState + ' ' + this.businessZip);
             },
             businessPhone: '+1 {{phone()}}',
             businessEmail: function (tags) {
@@ -71,8 +72,8 @@ reservationDate: '{{date(new Date(2015, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss"
 
 package_id: '100{{index()}}',
 packageDescription: '{{lorem(1, "sentences")}}',
-packagePrice: '{{floating(500, 4000, 2, "$0,0.00")}}',
-packageRequiredDeposit: '{{floating(500, 2000, 20, "$0,0.00")}}',
+packagePrice: '{{integer(99, 799)}}',
+packageRequiredDeposit: '{{integer(500, 1500)}}',
 business_id: '1000{{index()}}'
 
 //Product
@@ -80,7 +81,7 @@ business_id: '1000{{index()}}'
 product_id: '100{{index()}}',
 productDescription: '{{lorem(1, "sentences")}}',
 business_id: '1000{{index()}}',
-productPrice: '{{floating(5, 1000, 2, "$0,0.00")}}',
+productPrice: '{{integer(0, 299)}}',
 productInventory: '{{integer(0, 170)}}'
 
 //Service
@@ -88,8 +89,8 @@ productInventory: '{{integer(0, 170)}}'
 service_id: '100{{index()}}',
 serviceDescription: '{{lorem(1, "sentences")}}',
 business_id: '1000{{index()}}',
-servicePrice: '{{floating(5, 1000, 2, "$0,0.00")}}',
-serviceRequiredDeposit: '{{floating(500, 2000, 20, "$0,0.00")}}'
+servicePrice: '{{integer(59, 499)}}',
+serviceRequiredDeposit: '{{integer(50, 350)}}'
 
 //transaction
 trans_id: '100{{index()}}',
@@ -106,4 +107,4 @@ billStatus: function (tags) {
 var billstat = ['PR', 'PS', 'AP'];
 return billstat[tags.integer(0, billstat.length - 1)];
 },
-billAmount: '{{floating(-9999, 9999, 2, "$0,0.00")}}'
+billAmount: '{{integer(-1000, 2500)}}'

@@ -1,177 +1,177 @@
 [
   {
     business_id: 10000,
-    packageRequiredDeposit: '$1,156.65',
-    packagePrice: '$517.84',
-    packageDescription: 'Ea ea reprehenderit nisi aute veniam non voluptate consectetur reprehenderit pariatur.',
+    packageRequiredDeposit: 1088,
+    packagePrice: 291,
+    packageDescription: "Qui velit aliquip consectetur culpa aliqua amet duis quis in.",
     package_id: 1000
   },
   {
     business_id: 10001,
-    packageRequiredDeposit: '$1,408.05',
-    packagePrice: '$1,441.15',
-    packageDescription: 'Sint commodo tempor dolor commodo sunt sunt qui duis consequat excepteur qui consequat.',
+    packageRequiredDeposit: 1068,
+    packagePrice: 783,
+    packageDescription: "Laboris veniam velit culpa sunt deserunt in enim laboris anim.",
     package_id: 1001
   },
   {
     business_id: 10002,
-    packageRequiredDeposit: '$1,661.27',
-    packagePrice: '$3,566.70',
-    packageDescription: 'Eu id aliquip Lorem et laborum excepteur exercitation deserunt velit id et.',
+    packageRequiredDeposit: 1381,
+    packagePrice: 329,
+    packageDescription: "Occaecat laboris magna cillum commodo nostrud est mollit do magna laboris proident sit ullamco dolore.",
     package_id: 1002
   },
   {
     business_id: 10003,
-    packageRequiredDeposit: '$714.58',
-    packagePrice: '$1,224.96',
-    packageDescription: 'Pariatur occaecat occaecat aliqua sit ad ea.',
+    packageRequiredDeposit: 1375,
+    packagePrice: 205,
+    packageDescription: "Non dolor enim mollit incididunt elit irure aliqua.",
     package_id: 1003
   },
   {
     business_id: 10004,
-    packageRequiredDeposit: '$1,261.57',
-    packagePrice: '$1,620.17',
-    packageDescription: 'Commodo non nulla cillum sint amet cupidatat nulla non.',
+    packageRequiredDeposit: 1183,
+    packagePrice: 366,
+    packageDescription: "Ipsum aliqua magna consequat sint ipsum adipisicing minim qui voluptate.",
     package_id: 1004
   },
   {
     business_id: 10005,
-    packageRequiredDeposit: '$1,228.88',
-    packagePrice: '$2,552.35',
-    packageDescription: 'Sit officia ex incididunt irure fugiat cillum et nulla quis ipsum id exercitation sunt.',
+    packageRequiredDeposit: 1114,
+    packagePrice: 585,
+    packageDescription: "Dolore sint dolore veniam laborum irure in excepteur.",
     package_id: 1005
   },
   {
     business_id: 10006,
-    packageRequiredDeposit: '$1,774.33',
-    packagePrice: '$1,716.39',
-    packageDescription: 'Non duis aliquip in occaecat eiusmod nulla enim.',
+    packageRequiredDeposit: 1442,
+    packagePrice: 328,
+    packageDescription: "Est nostrud nisi eu aute id proident exercitation incididunt eu.",
     package_id: 1006
   },
   {
     business_id: 10007,
-    packageRequiredDeposit: '$1,264.91',
-    packagePrice: '$1,107.09',
-    packageDescription: 'Incididunt Lorem esse exercitation ex.',
+    packageRequiredDeposit: 1047,
+    packagePrice: 223,
+    packageDescription: "Et occaecat elit qui excepteur anim incididunt dolore consequat.",
     package_id: 1007
   },
   {
     business_id: 10008,
-    packageRequiredDeposit: '$1,595.12',
-    packagePrice: '$1,061.11',
-    packageDescription: 'Duis nisi cupidatat non amet reprehenderit adipisicing mollit est duis Lorem.',
+    packageRequiredDeposit: 602,
+    packagePrice: 669,
+    packageDescription: "Culpa nulla duis ad in excepteur aliquip consectetur ut anim excepteur nisi.",
     package_id: 1008
   },
   {
     business_id: 10009,
-    packageRequiredDeposit: '$607.66',
-    packagePrice: '$2,035.26',
-    packageDescription: 'Ea dolore occaecat anim incididunt voluptate eiusmod Lorem deserunt eiusmod.',
+    packageRequiredDeposit: 1350,
+    packagePrice: 728,
+    packageDescription: "Nostrud ex ea officia anim anim ad eu.",
     package_id: 1009
   },
   {
     business_id: 100010,
-    packageRequiredDeposit: '$1,574.65',
-    packagePrice: '$2,044.70',
-    packageDescription: 'Magna veniam nostrud cillum dolore et veniam aliqua eu Lorem sit sint.',
+    packageRequiredDeposit: 706,
+    packagePrice: 666,
+    packageDescription: "Ipsum ad irure Lorem excepteur id.",
     package_id: 10010
   },
   {
     business_id: 100011,
-    packageRequiredDeposit: '$1,678.37',
-    packagePrice: '$3,032.44',
-    packageDescription: 'Non in consectetur deserunt consectetur ullamco in excepteur aute voluptate tempor fugiat ea nisi eiusmod.',
+    packageRequiredDeposit: 1150,
+    packagePrice: 563,
+    packageDescription: "Lorem reprehenderit do mollit id elit qui sint labore cupidatat reprehenderit.",
     package_id: 10011
   },
   {
     business_id: 100012,
-    packageRequiredDeposit: '$1,522.45',
-    packagePrice: '$549.42',
-    packageDescription: 'Aute fugiat amet sunt deserunt cupidatat esse do sit do in dolor irure consequat.',
+    packageRequiredDeposit: 629,
+    packagePrice: 135,
+    packageDescription: "In mollit non est eiusmod in adipisicing eu.",
     package_id: 10012
   },
   {
     business_id: 100013,
-    packageRequiredDeposit: '$1,465.28',
-    packagePrice: '$2,441.19',
-    packageDescription: 'Aute duis culpa reprehenderit ipsum.',
+    packageRequiredDeposit: 799,
+    packagePrice: 168,
+    packageDescription: "Mollit ad laboris consequat laborum nisi esse id minim.",
     package_id: 10013
   },
   {
     business_id: 100014,
-    packageRequiredDeposit: '$933.33',
-    packagePrice: '$1,478.02',
-    packageDescription: 'Aliquip veniam enim reprehenderit nulla deserunt nulla.',
+    packageRequiredDeposit: 1233,
+    packagePrice: 756,
+    packageDescription: "Est sint et duis amet non proident.",
     package_id: 10014
   },
   {
     business_id: 100015,
-    packageRequiredDeposit: '$1,243.07',
-    packagePrice: '$3,573.47',
-    packageDescription: 'Adipisicing minim eiusmod aliqua consectetur consequat.',
+    packageRequiredDeposit: 877,
+    packagePrice: 773,
+    packageDescription: "Deserunt cupidatat qui magna tempor labore consectetur.",
     package_id: 10015
   },
   {
     business_id: 100016,
-    packageRequiredDeposit: '$1,933.07',
-    packagePrice: '$2,537.87',
-    packageDescription: 'Culpa consequat deserunt aute minim proident eu nisi nostrud eiusmod aliquip reprehenderit pariatur occaecat.',
+    packageRequiredDeposit: 741,
+    packagePrice: 491,
+    packageDescription: "Eiusmod consectetur veniam proident non amet aliquip et tempor.",
     package_id: 10016
   },
   {
     business_id: 100017,
-    packageRequiredDeposit: '$557.72',
-    packagePrice: '$734.68',
-    packageDescription: 'Mollit cillum labore excepteur do minim exercitation in enim enim.',
+    packageRequiredDeposit: 767,
+    packagePrice: 380,
+    packageDescription: "Consectetur veniam dolore quis voluptate et labore enim.",
     package_id: 10017
   },
   {
     business_id: 100018,
-    packageRequiredDeposit: '$1,709.50',
-    packagePrice: '$1,926.69',
-    packageDescription: 'Sunt pariatur voluptate eiusmod officia anim pariatur et nulla veniam commodo cillum minim.',
+    packageRequiredDeposit: 611,
+    packagePrice: 676,
+    packageDescription: "Reprehenderit cillum laboris Lorem nostrud dolor dolore esse cillum deserunt.",
     package_id: 10018
   },
   {
     business_id: 100019,
-    packageRequiredDeposit: '$1,324.03',
-    packagePrice: '$1,660.22',
-    packageDescription: 'Esse ullamco est ad eu incididunt Lorem enim mollit ullamco.',
+    packageRequiredDeposit: 941,
+    packagePrice: 781,
+    packageDescription: "Consectetur reprehenderit ullamco ea adipisicing deserunt nulla tempor.",
     package_id: 10019
   },
   {
     business_id: 100020,
-    packageRequiredDeposit: '$1,459.57',
-    packagePrice: '$2,715.43',
-    packageDescription: 'Fugiat minim laboris elit anim ipsum excepteur occaecat nostrud pariatur est sunt.',
+    packageRequiredDeposit: 902,
+    packagePrice: 407,
+    packageDescription: "Aliquip anim in voluptate ullamco eiusmod sunt eiusmod commodo elit non nulla ut pariatur.",
     package_id: 10020
   },
   {
     business_id: 100021,
-    packageRequiredDeposit: '$527.09',
-    packagePrice: '$3,733.87',
-    packageDescription: 'Veniam eiusmod enim dolor esse cillum nulla tempor quis magna irure proident culpa.',
+    packageRequiredDeposit: 1315,
+    packagePrice: 162,
+    packageDescription: "Nostrud anim duis nisi ullamco exercitation ipsum in ullamco cillum ex anim nisi magna.",
     package_id: 10021
   },
   {
     business_id: 100022,
-    packageRequiredDeposit: '$699.86',
-    packagePrice: '$914.52',
-    packageDescription: 'Deserunt dolor irure veniam nostrud ipsum sint ipsum reprehenderit et.',
+    packageRequiredDeposit: 984,
+    packagePrice: 399,
+    packageDescription: "Id do officia culpa esse commodo.",
     package_id: 10022
   },
   {
     business_id: 100023,
-    packageRequiredDeposit: '$567.54',
-    packagePrice: '$1,072.89',
-    packageDescription: 'Ullamco cillum aute officia laboris sint excepteur adipisicing.',
+    packageRequiredDeposit: 962,
+    packagePrice: 630,
+    packageDescription: "Cillum labore incididunt ea commodo aliquip voluptate aliqua esse tempor in qui id laborum voluptate.",
     package_id: 10023
   },
   {
     business_id: 100024,
-    packageRequiredDeposit: '$568.32',
-    packagePrice: '$1,553.33',
-    packageDescription: 'Incididunt cillum eiusmod irure consectetur et exercitation proident sunt laborum enim labore culpa.',
+    packageRequiredDeposit: 1426,
+    packagePrice: 281,
+    packageDescription: "Anim laborum velit quis ut dolore.",
     package_id: 10024
   }
 ]
