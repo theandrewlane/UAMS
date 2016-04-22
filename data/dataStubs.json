@@ -93,11 +93,31 @@ servicePrice: '{{integer(59, 499)}}',
 serviceRequiredDeposit: '{{integer(50, 350)}}'
 
 //transaction
-trans_id: '100{{index()}}',
-transDate: '{{date(new Date(2015, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss")}}'
+[
+{
+'repeat:75':{
+trans_id: 'T100{{index()}}',
+transDate: '{{date(new Date(2015, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss")}}',
+bill_id: '100{{index()}}',
+transDescrption: '{{lorem(1, "sentences")}}',
+aaaa: '1000{{index()}}',
+zzz: function (tags) {
+var billstat = ['R-', 'P-', 'O-'];
+var id = '1000{{index()}}';
+return billstat[tags.integer(0, billstat.length - 1)];
+},
+item_id: function (tags) {
+return (this.zzz + this.aaaa);
+}
+}
+}
+]
 
 //bill
 
+[
+{
+'repeat:25':{
 bill_id: '100{{index()}}',
 billType: function (tags) {
 var bills = ['C', 'B'];
@@ -107,4 +127,17 @@ billStatus: function (tags) {
 var billstat = ['PR', 'PS', 'AP'];
 return billstat[tags.integer(0, billstat.length - 1)];
 },
-billAmount: '{{integer(-1000, 2500)}}'
+customer_id: '1000{{index() * 3}}',
+business_id: '100{{index() * 2}}',
+aaaa: '1000{{index() * 3}}',
+zzz: function (tags) {
+var billstat = ['R-', 'P-', 'O-'];
+var id = '1000{{index() * 3}}';
+return billstat[tags.integer(0, billstat.length - 1)];
+},
+item_id: function (tags) {
+return (this.zzz + this.aaaa);
+}
+}
+}
+]

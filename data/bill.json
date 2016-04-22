@@ -1,152 +1,202 @@
 [
   {
-    billAmount: 44,
-    billStatus: "AP",
-    billType: "B",
+    item_id: "R-10000",
+    business_id: 1000,
+    customer_id: 10000,
+    billStatus: "PR",
+    billType: "C",
     bill_id: 1000
   },
   {
-    billAmount: -279,
-    billStatus: "PR",
-    billType: "B",
+    item_id: "P-10003",
+    business_id: 1002,
+    customer_id: 10003,
+    billStatus: "AP",
+    billType: "C",
     bill_id: 1001
   },
   {
-    billAmount: -869,
-    billStatus: "PR",
-    billType: "C",
+    item_id: "O-10006",
+    business_id: 1004,
+    customer_id: 10006,
+    billStatus: "AP",
+    billType: "B",
     bill_id: 1002
   },
   {
-    billAmount: 1183,
-    billStatus: "PR",
-    billType: "C",
+    item_id: "O-10009",
+    business_id: 1006,
+    customer_id: 10009,
+    billStatus: "AP",
+    billType: "B",
     bill_id: 1003
   },
   {
-    billAmount: -573,
+    item_id: "O-100012",
+    business_id: 1008,
+    customer_id: 100012,
     billStatus: "PS",
-    billType: "C",
+    billType: "B",
     bill_id: 1004
   },
   {
-    billAmount: 980,
-    billStatus: "PR",
-    billType: "B",
+    item_id: "O-100015",
+    business_id: 10010,
+    customer_id: 100015,
+    billStatus: "PS",
+    billType: "C",
     bill_id: 1005
   },
   {
-    billAmount: -665,
-    billStatus: "PR",
+    item_id: "R-100018",
+    business_id: 10012,
+    customer_id: 100018,
+    billStatus: "PS",
     billType: "B",
     bill_id: 1006
   },
   {
-    billAmount: -809,
-    billStatus: "AP",
+    item_id: "O-100021",
+    business_id: 10014,
+    customer_id: 100021,
+    billStatus: "PR",
     billType: "C",
     bill_id: 1007
   },
   {
-    billAmount: 775,
-    billStatus: "AP",
-    billType: "B",
+    item_id: "P-100024",
+    business_id: 10016,
+    customer_id: 100024,
+    billStatus: "PR",
+    billType: "C",
     bill_id: 1008
   },
   {
-    billAmount: 1129,
-    billStatus: "PS",
-    billType: "C",
+    item_id: "P-100027",
+    business_id: 10018,
+    customer_id: 100027,
+    billStatus: "PR",
+    billType: "B",
     bill_id: 1009
   },
   {
-    billAmount: 710,
-    billStatus: "PR",
+    item_id: "P-100030",
+    business_id: 10020,
+    customer_id: 100030,
+    billStatus: "AP",
     billType: "C",
     bill_id: 10010
   },
   {
-    billAmount: 105,
-    billStatus: "AP",
+    item_id: "O-100033",
+    business_id: 10022,
+    customer_id: 100033,
+    billStatus: "PR",
     billType: "C",
     bill_id: 10011
   },
   {
-    billAmount: -157,
-    billStatus: "PR",
+    item_id: "P-100036",
+    business_id: 10024,
+    customer_id: 100036,
+    billStatus: "PS",
     billType: "B",
     bill_id: 10012
   },
   {
-    billAmount: 1282,
+    item_id: "O-100039",
+    business_id: 10026,
+    customer_id: 100039,
     billStatus: "PS",
     billType: "C",
     bill_id: 10013
   },
   {
-    billAmount: 1933,
-    billStatus: "PS",
-    billType: "C",
+    item_id: "P-100042",
+    business_id: 10028,
+    customer_id: 100042,
+    billStatus: "AP",
+    billType: "B",
     bill_id: 10014
   },
   {
-    billAmount: 142,
-    billStatus: "AP",
+    item_id: "O-100045",
+    business_id: 10030,
+    customer_id: 100045,
+    billStatus: "PS",
     billType: "C",
     bill_id: 10015
   },
   {
-    billAmount: -787,
-    billStatus: "PR",
+    item_id: "R-100048",
+    business_id: 10032,
+    customer_id: 100048,
+    billStatus: "AP",
     billType: "C",
     bill_id: 10016
   },
   {
-    billAmount: 1281,
+    item_id: "O-100051",
+    business_id: 10034,
+    customer_id: 100051,
     billStatus: "PS",
-    billType: "B",
+    billType: "C",
     bill_id: 10017
   },
   {
-    billAmount: 2133,
+    item_id: "P-100054",
+    business_id: 10036,
+    customer_id: 100054,
     billStatus: "AP",
     billType: "B",
     bill_id: 10018
   },
   {
-    billAmount: 2481,
-    billStatus: "AP",
+    item_id: "P-100057",
+    business_id: 10038,
+    customer_id: 100057,
+    billStatus: "PS",
     billType: "B",
     bill_id: 10019
   },
   {
-    billAmount: 746,
-    billStatus: "AP",
+    item_id: "P-100060",
+    business_id: 10040,
+    customer_id: 100060,
+    billStatus: "PS",
     billType: "C",
     bill_id: 10020
   },
   {
-    billAmount: -425,
-    billStatus: "PR",
-    billType: "C",
+    item_id: "O-100063",
+    business_id: 10042,
+    customer_id: 100063,
+    billStatus: "AP",
+    billType: "B",
     bill_id: 10021
   },
   {
-    billAmount: 961,
+    item_id: "P-100066",
+    business_id: 10044,
+    customer_id: 100066,
     billStatus: "AP",
-    billType: "B",
+    billType: "C",
     bill_id: 10022
   },
   {
-    billAmount: 2454,
-    billStatus: "PS",
+    item_id: "P-100069",
+    business_id: 10046,
+    customer_id: 100069,
+    billStatus: "AP",
     billType: "B",
     bill_id: 10023
   },
   {
-    billAmount: 623,
+    item_id: "P-100072",
+    business_id: 10048,
+    customer_id: 100072,
     billStatus: "AP",
-    billType: "C",
+    billType: "B",
     bill_id: 10024
   }
 ]

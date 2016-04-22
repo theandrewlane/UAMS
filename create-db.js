@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const allDbData = require('./data/db-data.js');
 const db = mongoose.connection;
 const Schema = mongoose.Schema;
+var sql = require('mssql');
+
 mongoose.connect('mongodb://localhost/UAMS');
 
 //Error Handling
@@ -35,7 +37,7 @@ const customerSchema = new Schema({
 });
 
 const packageReservationSchema = new Schema({
-    reservation_id: Number,
+    item_id: {type: String, required: true, trim: true},
     customer_id: Number,
     package_id: Number,
     reservationDate: Date
@@ -44,11 +46,11 @@ const packageReservationSchema = new Schema({
 const orderSchema = new Schema({
     productQuantity: Number,
     product_id: Number,
-    order_id: Number
+    item_id: {type: String, required: true, trim: true}
 });
 
 const serviceReservationSchema = new Schema({
-    reservation_id: Number,
+    item_id: {type: String, required: true, trim: true},
     customer_id: Number,
     service_id: Number,
     reservationDate: Date
@@ -79,12 +81,16 @@ const serviceSchema = new Schema({
 });
 
 const transactionSchema = new Schema({
+    transDescription: {type: String, required: true, trim: true},
+    bill_id: Number,
     transDate: {type: Date, default: Date.now},
-    trans_id: Number
+    trans_id: {type: String, required: true, trim: true},
+    amount: Number
 });
 
 const billSchema = new Schema({
-    billAmount: Number,
+    business_id: Number,
+    customer_id: Number,
     billStatus: {type: String, required: true, trim: true},
     billType: {type: String, required: true, trim: true},
     bill_id: Number
@@ -104,18 +110,18 @@ const transactionModel = mongoose.model('Transaction', transactionSchema);
 const billModel = mongoose.model('Bill', billSchema);
 
 
-
 //Helper Variables
 const data = ['businessData', 'billData', 'customerData', 'orderData', 'packageReservationData', 'productData', 'serviceData', 'serviceReservationData', 'transactionData', 'uaPackageData'],
     models = [businessModel, billModel, customerModel, orderModel, packageReservationModel, productModel, serviceModel, serviceReservationModel, transactionModel, packageModel];
 
-
-
-//Define Functions
-/*
- @param product_id - The ID of the product to update
- @param inventory - The number of inventory to be added to the current inventory
+/**
+ * Given a Product_ID, add/remove inventory related inventory
+ *
+ * @param {number} product_id - The ID of the product to update
+ *@param {number} inventory - The number of inventory to be added to the current inventory
  */
+
+
 const updateInventory = (prod_id, inventory) => {
     productModel.findOne({product_id: prod_id}, (err, prod) => {
         if (err) return console.log(err);
@@ -128,6 +134,46 @@ const updateInventory = (prod_id, inventory) => {
 };
 
 
+/**
+ * Given a customer name (first last), produce a bill listing the transaction Ids, dates, count, amounts, status, and total due.
+ *
+ * @param {string} customer  - first last
+ */
+
+const produceCustomerBill = function(customer) {
+    var fullName = customer.split(' ');
+    var firstName = fullName[0];
+    var lastName = fullName[fullName.length - 1];
+    var query1 = customerModel.findOne({customerFirstName: firstName}, {customerLastName: lastName});
+    var transTotal = [];
+    query1.select('customer_id');
+    query1.exec(function(err, person) {
+        if (err) return handleError(err);
+        console.info('------------------Generating Bill For: ' + lastName + ', ' + firstName + ' ------------------\nCustomerId: ' + person.customer_id);
+        return person.customer_id;
+    }).then(function(res) {
+        var query2 = billModel.findOne({customer_id: res.customer_id});
+        query2.select('bill_id billStatus');
+        query2.exec(function(err, bid) {
+            if (err) return handleError(err);
+            console.info('\nBill ID: ' + bid.bill_id + '\nBill Status: ' + bid.billStatus);
+            return bid;
+        }).then(function(res2) {
+            var query3 = transactionModel.find({bill_id: res2.bill_id});
+            query3.select('trans_id transDate transDescription amount');
+            query3.exec(function(err, trans) {
+                console.info('\nTransaction Count: ' + trans.length);
+                trans.forEach(function(tran) {
+                    transTotal.push(tran.amount);
+                    console.info('TransID: ' + tran.trans_id + '\t' + tran.transDate + '\t$' + tran.amount);
+                });
+                console.log('Total Amount due: $' + transTotal.reduce((a, b) => a + b, 0));
+                console.log('------------------------------------------------------------------------');
+            });
+        });
+    });
+};
+
 const bulkArrayinsert = (index, callback) => models[index].insertMany(allDbData[data[index]], err => {
     if (err) console.log(`error !!!! ${err}`);
     console.info('Inserted all %s entries...', data[index]);
@@ -135,12 +181,15 @@ const bulkArrayinsert = (index, callback) => models[index].insertMany(allDbData[
 
 db.once('open', () => {
     console.log('connected, now do stuff!');
-    return mongoose.connection.db.dropDatabase().then(() => {
+    mongoose.connection.db.dropDatabase().then(() => {
         for (var i = 0; i < data.length; i++) {
             bulkArrayinsert(i);
         }
     });
-    updateInventory(1002, 34);
+    setTimeout(() => {
+        updateInventory(1002, 34);
+        produceCustomerBill('Gallegos Grant');
+    }, 1450);
 
 });
 
