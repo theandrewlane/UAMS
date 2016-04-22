@@ -4,6 +4,8 @@ const db = mongoose.connection;
 const Schema = mongoose.Schema;
 var sql = require('mssql');
 
+'use strict';
+
 mongoose.connect('mongodb://localhost/UAMS');
 
 //Error Handling
@@ -117,18 +119,18 @@ const data = ['businessData', 'billData', 'customerData', 'orderData', 'packageR
 /**
  * Given a Product_ID, add/remove inventory related inventory
  *
- * @param {number} product_id - The ID of the product to update
+ * @param {number} productID - The ID of the product to update
  *@param {number} inventory - The number of inventory to be added to the current inventory
- */
+ **/
 
 
-const updateInventory = (prod_id, inventory) => {
-    productModel.findOne({product_id: prod_id}, (err, prod) => {
+const updateInventory = (productID, inventory) => {
+    productModel.findOne({product_id: productID}, (err, prod) => {
         if (err) return console.log(err);
         prod.productInventory += inventory;
         prod.save(err => {
             if (err) return (err);
-            console.info(`Successfully updated ProductID: ${prod_id}. Updated inventory is now: ${prod.productInventory}`);
+            console.info(`Successfully updated ProductID: ${productID}. Updated inventory is now: ${prod.productInventory}`);
         });
     });
 };
@@ -138,8 +140,7 @@ const updateInventory = (prod_id, inventory) => {
  * Given a customer name (first last), produce a bill listing the transaction Ids, dates, count, amounts, status, and total due.
  *
  * @param {string} customer  - first last
- */
-
+ **/
 const produceCustomerBill = function(customer) {
     var fullName = customer.split(' ');
     var firstName = fullName[0];
