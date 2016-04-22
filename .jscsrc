@@ -7,6 +7,7 @@
   "requireSemicolons": true,
   "requireParenthesesAroundIIFE": true,
   "maxErrors": 10000,
+  "requireCurlyBraces": false,
   "disallowMultipleLineBreaks": false,
   "requireCamelCaseOrUpperCaseIdentifiers": false,
   "maximumLineLength": 120,

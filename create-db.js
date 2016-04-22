@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/UAMS2');
-const db = mongoose.connection;
-
-const Schema = mongoose.Schema;
 const allDbData = require('./data/db-data.js');
+const db = mongoose.connection;
+const Schema = mongoose.Schema;
+mongoose.connect('mongodb://localhost/UAMS');
+
+//Error Handling
+db.on('error', err => console.log('connection error', err));
 
 //Construct Schemas
 const businessSchema = new Schema({
@@ -89,7 +91,7 @@ const billSchema = new Schema({
 });
 
 
-//Create Models using schemas
+//Create Models from Schemas
 const businessModel = mongoose.model('Business', businessSchema);
 const customerModel = mongoose.model('Customer', customerSchema);
 const packageReservationModel = mongoose.model('PackageReservation', packageReservationSchema);
@@ -101,128 +103,45 @@ const serviceModel = mongoose.model('Service', serviceSchema);
 const transactionModel = mongoose.model('Transaction', transactionSchema);
 const billModel = mongoose.model('Bill', billSchema);
 
-const models = [businessModel, customerModel, packageReservationModel, serviceReservationModel, orderModel, packageModel, productModel, serviceModel, transactionModel, billModel];
+
+
+//Helper Variables
+const data = ['businessData', 'billData', 'customerData', 'orderData', 'packageReservationData', 'productData', 'serviceData', 'serviceReservationData', 'transactionData', 'uaPackageData'],
+    models = [businessModel, billModel, customerModel, orderModel, packageReservationModel, productModel, serviceModel, serviceReservationModel, transactionModel, packageModel];
+
+
 
 //Define Functions
-
 /*
  @param product_id - The ID of the product to update
  @param inventory - The number of inventory to be added to the current inventory
  */
-const updateInventory = (prod_id, inventory/*, callback*/) => {
+const updateInventory = (prod_id, inventory) => {
     productModel.findOne({product_id: prod_id}, (err, prod) => {
-        if (err) {
-            console.log(err);
-            return;
-        }
+        if (err) return console.log(err);
         prod.productInventory += inventory;
         prod.save(err => {
-            if (err) {
-                return (err);
-            }
-            console.info(
-                `Successfully updated ProductID: ${prod_id}. Updated inventory is now: ${prod.productInventory}`
-            );
-            //return callback(err, prod);
+            if (err) return (err);
+            console.info(`Successfully updated ProductID: ${prod_id}. Updated inventory is now: ${prod.productInventory}`);
         });
-
     });
 };
 
 
-const collections = ['businesses', 'customers', 'packagesReservations', 'serviceReservations', 'orders', 'packages', 'products', 'services', 'transactions', 'bills'];
-var data = ['businessData', 'customerData', 'packagesReservationData', 'serviceReservationData', 'orderData', 'packageData', 'productData', 'serviceData', 'transactionData', 'billData'];
+const bulkArrayinsert = (index, callback) => models[index].insertMany(allDbData[data[index]], err => {
+    if (err) console.log(`error !!!! ${err}`);
+    console.info('Inserted all %s entries...', data[index]);
+}).then(() => callback());
 
-
-db.on('error', err => {
-    console.log('connection error', err);
-});
 db.once('open', () => {
     console.log('connected, now do stuff!');
-    //mongoose.connection.db.dropDatabase();
-    var i = 0;
-    /*   for (var x in allDbData) {
-           models[i].insertMany(allDbData[data[i]], err => {
-               if (err) {
-                   console.log(`error !!!! ${err}`);
-               }
-               console.info('Inserted all %s entries...', data[i]);
-               i++;
-           });
-       }*/
-
-    businessModel.insertMany(allDbData.businessData, err => {
-            if (err) {
-                return console.log(`error !!!! ${err}`);
-            }
-            return console.info('Inserted all business entries...');
-        });
-    customerModel.insertMany(allDbData.customerData, err => {
-        if (err) {
-            return console.log(err);
+    return mongoose.connection.db.dropDatabase().then(() => {
+        for (var i = 0; i < data.length; i++) {
+            bulkArrayinsert(i);
         }
-        return console.info('Inserted all customer entries...');
     });
-
-    packageReservationModel.insertMany(allDbData.packageReservationData, err => {
-        if (err) {
-            return console.log(err);
-        }
-        return console.info('Inserted all package reservation entries...');
-    });
-
-    serviceReservationModel.insertMany(allDbData.serviceReservationData, err => {
-        if (err) {
-            return console.log(err);
-        }
-        return console.info('Inserted all service reservation entries...');
-    });
-
-    orderModel.insertMany(allDbData.orderData, err => {
-        if (err) {
-            return console.log(err);
-        }
-        return console.info('Inserted all order entries...');
-    });
-
-    packageModel.insertMany(allDbData.uaPackageData, err => {
-        if (err) {
-            return console.log(err);
-        }
-        return console.info('Inserted all package entries...');
-    });
-
-    productModel.insertMany(allDbData.productData, err => {
-        if (err) {
-            return console.log(err);
-        }
-        return console.info('Inserted all product entries...');
-    });
-
-    serviceModel.insertMany(allDbData.serviceData, err => {
-        if (err) {
-            return console.log(err);
-        }
-        return console.info('Inserted all service entries...');
-    });
-    transactionModel.insertMany(allDbData.transactionData, err => {
-        if (err) {
-            return console.log(err);
-        }
-        return console.info('Inserted all transaction entries...');
-    });
-
-    billModel.insertMany(allDbData.billData, err => {
-        if (err) {
-            return console.log(err);
-        }
-        return console.info('Inserted all bill entries...');
-    });
-
-    updateInventory(10011, 39);
-    setTimeout(() => {
-        console.log('Closing DB...');
-        return db.close(); //Don't close it if you're running functions from the terminal!
-    }, 1450);
+    updateInventory(1002, 34);
 
 });
+
+
