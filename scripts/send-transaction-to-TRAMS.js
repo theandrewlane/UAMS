@@ -32,51 +32,36 @@ var config = {
 };
 
 //TODO make transaction
-
-const sendTransactionToTRAMS = function(transID, customerID) {
-
+const sendTransactionToTRAMS = function (transID, customerID, transAmount) {
     var deferred = Q.defer();
-    mongoose.connect('mongodb://localhost/UAMS');
-    const db = mongoose.connection;
-    db.on('error', err => console.error('connection error', err));
-    db.once('open', () => {
-        customerModel.findOne({customer_ID: customerID}, (err, prod) => {
-                if (err) {
-                console.error(`UAMS Insert ERROR: ${err}`);
-              //  return deferred.resolve(null);
-            }
-            console.info(`TRAMS -> UAMS Insertion SUCCESS: Added ${prod[0]} to the CUSTOMERS collection`);
-           // return deferred.resolve(prod);
-        });
-
-    });
-    //return deferred.promise;
-
-/*    return sql.connect(config).then(function() {
-        /!*     var request = new sql.Request();
-         request.query('inser').then(function(recordset) {
-         console.log(request.rowsAffected);
-         });*!/
-
-        sql.query`select TOP 1 ReservationID from Reservation where PersonID = ${personid}`.then(function(res) {
-
+    var trans;
+    customerModel.findOne({customer_ID: customerID}, (err, prod) => {
+        if (err) {
+            console.error(`UAMS Insert ERROR: ${err}`);
+            return deferred.resolve(null);
         }
-        sql.query`insert into  ReservationID from Reservation where PersonID = ${personid}`.then(function(res) {
-            if (res.length < 1) {
-                console.error(`TRAMS QUERY ERROR: PersonID:${personid} does not have any listed reservations in the TRAMS database`);
-                deferred.resolve(res.length);
-            } else {
-                console.info(`TRAMS QUERY SUCCESS:PersonID:${personid}) was found in the TRAMS database, and has ${res.length} vacation(s)!`);
-                deferred.resolve(res.length);
-            }
+        console.info(`TRAMS -> UAMS Insertion SUCCESS: Added ${prod} to the CUSTOMERS collection`);
+        return prod.tramsPerson_id;
+    }).then(function (tid) {
+        transactionModel.find({trans_id: tid}, (err, prod) => {
 
-        }).catch(function(err) {
-            console.error(`TRAMS QUERY SYNTAX/PERSISTENCE ERROR: ${err} please try again later`);
+            trans = prod;
+        }).then(function () {
+            return sql.connect(config).then(function () {
+                return sql.query`select TOP 1 ReservationID from Reservation where PersonID = ${transID}`.then(function (rid) {
+                    return sql.query`select TOP 1 FolioID from FOLIO where ReservationID = ${rid[0].ReservationID}`.then(function (fid) {
+                        return sql.query`insert into FOLIOTRANSACTION (TransDate, TransAmount, TransDescription, FolioID) VALUES (${fid[0].transDate}, ${transAmount}, ${fid[0].transDescription}, ${fid[0].folioID}`.then(function (fid) {
+                            console.info(`TRAMS -> UAMS Insertion SUCCESS: Added ${prod} to the CUSTOMERS collection`);
+
+                            return deferred.resolve(res);
+                        });
+                    }).then(function () {
+                        return deferred.promise;
+                    });
+                });
+            });
         });
-    }).then(function() {
-        sql.close();
-        return deferred.promise;
-    });*/
+    });
 };
 
 

@@ -4,6 +4,7 @@ const db = mongoose.connection;
 const Schema = mongoose.Schema;
 var sql = require('mssql');
 var Q = require('q');
+
 var config = {
     server: 'titan.cs.weber.edu',
     database: 'Lane_TRAMS',
@@ -235,8 +236,11 @@ db.once('open', () => {
         }
     });
     setTimeout(() => {
-        updateInventory(1002, 34);
-        produceCustomerBill('Gallegos Grant');
+      //  updateInventory(1002, 34);
+      //  produceCustomerBill('Gallegos Grant');
+        console.log("data insertion successfull");
+
+        db.close();
     }, 1450);
 
 });
