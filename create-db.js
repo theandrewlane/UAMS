@@ -3,8 +3,21 @@ const allDbData = require('./data/db-data.js');
 const db = mongoose.connection;
 const Schema = mongoose.Schema;
 var sql = require('mssql');
+var Q = require('q');
+var config = {
+    server: 'titan.cs.weber.edu',
+    database: 'Lane_TRAMS',
+    user: 'AndrewLane',
+    password: 'Android12',
+    port: 10433,
+    parseJson: true,
+    pool: {
+        max: 10,
+        min: 0,
+        idleTimeoutMillis: 30000
+    }
+};
 
-'use strict';
 
 mongoose.connect('mongodb://localhost/UAMS');
 
@@ -141,30 +154,31 @@ const updateInventory = (productID, inventory) => {
  *
  * @param {string} customer  - first last
  **/
-const produceCustomerBill = function(customer) {
+
+const produceCustomerBill = function (customer) {
     var fullName = customer.split(' ');
     var firstName = fullName[0];
     var lastName = fullName[fullName.length - 1];
     var query1 = customerModel.findOne({customerFirstName: firstName}, {customerLastName: lastName});
     var transTotal = [];
     query1.select('customer_id');
-    query1.exec(function(err, person) {
+    query1.exec(function (err, person) {
         if (err) return handleError(err);
         console.info('------------------Generating Bill For: ' + lastName + ', ' + firstName + ' ------------------\nCustomerId: ' + person.customer_id);
         return person.customer_id;
-    }).then(function(res) {
+    }).then(function (res) {
         var query2 = billModel.findOne({customer_id: res.customer_id});
         query2.select('bill_id billStatus');
-        query2.exec(function(err, bid) {
+        query2.exec(function (err, bid) {
             if (err) return handleError(err);
             console.info('\nBill ID: ' + bid.bill_id + '\nBill Status: ' + bid.billStatus);
             return bid;
-        }).then(function(res2) {
+        }).then(function (res2) {
             var query3 = transactionModel.find({bill_id: res2.bill_id});
             query3.select('trans_id transDate transDescription amount');
-            query3.exec(function(err, trans) {
+            query3.exec(function (err, trans) {
                 console.info('\nTransaction Count: ' + trans.length);
-                trans.forEach(function(tran) {
+                trans.forEach(function (tran) {
                     transTotal.push(tran.amount);
                     console.info('TransID: ' + tran.trans_id + '\t' + tran.transDate + '\t$' + tran.amount);
                 });
@@ -179,6 +193,39 @@ const bulkArrayinsert = (index, callback) => models[index].insertMany(allDbData[
     if (err) console.log(`error !!!! ${err}`);
     console.info('Inserted all %s entries...', data[index]);
 }).then(() => callback());
+
+
+const sendTransactionToTRAMS = function (transID, customerID, transAmount) {
+    var deferred = Q.defer();
+    var trans;
+    customerModel.findOne({customer_ID: customerID}, (err, prod) => {
+        if (err) {
+            console.error(`UAMS Insert ERROR: ${err}`);
+            return deferred.resolve(null);
+        }
+        console.info(`TRAMS -> UAMS Insertion SUCCESS: Added ${prod} to the CUSTOMERS collection`);
+        return prod.tramsPerson_id;
+    }).then(function (tid) {
+        transactionModel.find({trans_id: tid}, (err, prod) => {
+
+            trans = prod;
+        }).then(function () {
+            return sql.connect(config).then(function () {
+                return sql.query`select TOP 1 ReservationID from Reservation where PersonID = ${transID}`.then(function (rid) {
+                    return sql.query`select TOP 1 FolioID from FOLIO where ReservationID = ${rid[0].ReservationID}`.then(function (fid) {
+                        return sql.query`insert into FOLIOTRANSACTION (TransDate, TransAmount, TransDescription, FolioID) VALUES (${fid[0].transDate}, ${transAmount}, ${fid[0].transDescription}, ${fid[0].folioID}`.then(function (fid) {
+                            console.info(`TRAMS -> UAMS Insertion SUCCESS: Added ${prod} to the CUSTOMERS collection`);
+
+                            return deferred.resolve(res);
+                        });
+                    }).then(function () {
+                        return deferred.promise;
+                    });
+                });
+            });
+        });
+    });
+};
 
 db.once('open', () => {
     console.log('connected, now do stuff!');

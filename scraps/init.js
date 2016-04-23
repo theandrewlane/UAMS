@@ -129,6 +129,9 @@ function createCollection(collection, data) {
     return collection.insert(data);
 }
 
+
+
+
 //Create everything
 createDB();
 
