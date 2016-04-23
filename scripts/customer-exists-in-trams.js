@@ -32,15 +32,8 @@ const customerExistsInTrams = function (firstName, lastName) {
     return sql.connect(config).then(function () {
         sql.query`select TOP 1 * from Person where PersonFirst = ${firstName} AND PersonLast = ${lastName}`.then(function (res) {
             if (res.length < 1) {
-                /*if (retry == 0) {
-                 retry++;
-                 sql.connection.close();
-                 self.customerExistsInTrams(lastName, firstName);
-                 // deferred.reject(`TRAMS QUERY ERROR: ${firstName}, ${lastName} was not found in the TRAMS database!`);
-                 } else {*/
                 console.error(`TRAMS QUERY ERROR: ${firstName}, ${lastName} was not found in the TRAMS database!`);
                 deferred.reject(null);
-                //}
             } else {
                 res = res[0].PersonID;
                 console.info(`TRAMS QUERY SUCCESS: ${firstName}, ${lastName} (PersonID:${res}) was found in the TRAMS database!`);
@@ -50,13 +43,12 @@ const customerExistsInTrams = function (firstName, lastName) {
         }).catch(function (err) {
             console.error(`TRAMS undefined error ${err} please try again later`);
         });
-    }).then(function () {c
+    }).then(function () {
         sql.close();
         return deferred.promise;
     });
 };
 
 
-customerExistsInTrams('Glenna', 'Alvarado').then(function (res) {
-    console.log('Found PersonID:' + res);
-});
+//Test it
+customerExistsInTrams(12323, 11);

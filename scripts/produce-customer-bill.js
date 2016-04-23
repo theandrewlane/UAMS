@@ -15,7 +15,7 @@ const produceCustomerBill = function (customer) {
     var transTotal = [];
     query1.select('customer_id');
     query1.exec(function (err, person) {
-        if (err) return handleError(err);
+        if (person == null) return console.error("ERROR producing bill - Please check customer name: " + customer);
         console.info('------------------Generating Bill For: ' + lastName + ', ' + firstName + ' ------------------\nCustomerId: ' + person.customer_id);
         return person.customer_id;
     }).then(function (res) {

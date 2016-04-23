@@ -17,7 +17,10 @@
 'use strict';
 const updateInventory = (productID, inventory) => {
     productModel.findOne({product_id: productID}, (err, prod) => {
-        if (err) return console.log(err);
+        if (prod = null) {
+        console.info(`Unable to update ProductID: ${productID}`);
+            return console.error(err);
+        }
         prod.productInventory += inventory;
         prod.save(err => {
             if (err) return (err);

@@ -58,17 +58,17 @@ const InsertTRAMSPersonData = function(tramsPID) {
                             return deferred.resolve(null);
                         }
                         console.info(`TRAMS -> UAMS Insertion SUCCESS: Added ${res[0].PersonFirst} ${res[0].PersonLast} to the CUSTOMERS collection`);
-                        return deferred.resolve(res);
+                        return deferred.resolve(res[0]);
                     });
                 });
+                sql.close();
             }
         });
     }).then(function() {
+        db.close();
+
         return deferred.promise;
     });
-    return sql.close();
 };
 
-InsertTRAMSPersonData(40).then(function(res) {
-    console.log('Found PersonID:' + res);
-});
+InsertTRAMSPersonData(39);

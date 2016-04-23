@@ -140,7 +140,8 @@ const data = ['businessData', 'billData', 'customerData', 'orderData', 'packageR
 
 const updateInventory = (productID, inventory) => {
     productModel.findOne({product_id: productID}, (err, prod) => {
-        if (err) return console.log(err);
+        if (prod == null) return console.error(`Unable to update ProductID: ${productID}`);
+
         prod.productInventory += inventory;
         prod.save(err => {
             if (err) return (err);
@@ -156,6 +157,12 @@ const updateInventory = (productID, inventory) => {
  * @param {string} customer  - first last
  **/
 
+
+const bulkArrayinsert = (index, callback) => models[index].insertMany(allDbData[data[index]], err => {
+    if (err) console.log(`error !!!! ${err}`);
+    console.info('Inserted all %s entries...', data[index]);
+}).then(() => callback());
+
 const produceCustomerBill = function (customer) {
     var fullName = customer.split(' ');
     var firstName = fullName[0];
@@ -164,7 +171,7 @@ const produceCustomerBill = function (customer) {
     var transTotal = [];
     query1.select('customer_id');
     query1.exec(function (err, person) {
-        if (err) return handleError(err);
+        if (person == null) return console.error("ERROR producing bill - Please check customer name: " + customer);
         console.info('------------------Generating Bill For: ' + lastName + ', ' + firstName + ' ------------------\nCustomerId: ' + person.customer_id);
         return person.customer_id;
     }).then(function (res) {
@@ -189,12 +196,6 @@ const produceCustomerBill = function (customer) {
         });
     });
 };
-
-const bulkArrayinsert = (index, callback) => models[index].insertMany(allDbData[data[index]], err => {
-    if (err) console.log(`error !!!! ${err}`);
-    console.info('Inserted all %s entries...', data[index]);
-}).then(() => callback());
-
 
 const sendTransactionToTRAMS = function (transID, customerID, transAmount) {
     var deferred = Q.defer();
