@@ -9,7 +9,7 @@
     "mongodb": "^2.1.14",
     "mongoose": "^4.4.12",
     "mssql": "^3.2.0",
-    "seriate": "^0.6.1"
+    "q": "^1.4.1"
   },
   "devDependencies": {
     "mongodb": "^2.1.14",
